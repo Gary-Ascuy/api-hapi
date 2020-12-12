@@ -1,20 +1,28 @@
 {
   "name": "api-hapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hapi Test Api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js",
+    "start:prod": "node src/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gary-Ascuy/api-hapi.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Gary Ascuy <gary.ascuy@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Gary-Ascuy/api-hapi/issues"
   },
-  "homepage": "https://github.com/Gary-Ascuy/api-hapi#readme"
+  "homepage": "https://github.com/Gary-Ascuy/api-hapi#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
 }
