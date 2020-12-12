@@ -1,5 +1,5 @@
-const { required } = require("nconf")
+const { required } = require('nconf');
 
-const { main } = require('./main')
+const { main } = require('./main');
 
-main()
+main();
