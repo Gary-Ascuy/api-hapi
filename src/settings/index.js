@@ -1,4 +1,4 @@
-const nconf = require('nconf');
+const nconf = require('nconf')
 
 /**
  * ENVIRONMENT VARIABLES
@@ -12,10 +12,10 @@ const nconf = require('nconf');
 
 nconf.argv()
   .env('__')
-  .file('./src/settings/defaults.json');
+  .file('./src/settings/defaults.json')
 
 function get(key) {
-  return nconf.get(key);
+  return nconf.get(key)
 }
 
-module.exports = { get };
+module.exports = { get }

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon src/index.js",
     "start:production": "node src/index.js",
-    "lint": "eslint ./src/**/*.js",
+    "lint": "eslint ./src --config .eslintrc.json",
     "test": "jest"
   },
   "repository": {
