@@ -1,9 +1,18 @@
 {
-    "server": {
-        "host": "0.0.0.0",
-        "port": 3666
-    },
-    "logger": {
-        "level": "info"
+  "server": {
+    "host": "0.0.0.0",
+    "port": 3666
+  },
+  "database": {
+    "uri": "mongodb://money:money@localhost:27017/money?authSource=admin",
+    "options": {
+      "useFindAndModify": false,
+      "useNewUrlParser": true,
+      "useUnifiedTopology": true,
+      "useCreateIndex": true
     }
+  },
+  "logger": {
+    "level": "info"
+  }
 }
