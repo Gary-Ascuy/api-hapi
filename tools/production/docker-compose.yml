@@ -1,0 +1,28 @@
+# Production Template
+version: '3.8'
+
+services:
+  api:
+    image: garyascuy/money:latest
+    container_name: api
+    ports:
+      - 80:3666
+    environment:
+      logger__level: info
+
+  database:
+    image: mongo:4.4
+    container_name: db
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+      - ./init.js:/docker-entrypoint-initdb.d/init.js
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: updateMe
+      MONGO_INITDB_ROOT_PASSWORD: updateMe
+
+networks:
+  default:
+    external:
+      name: production
