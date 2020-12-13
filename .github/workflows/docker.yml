@@ -27,8 +27,9 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/386
-          push: true
           tags: garyascuy/money:latest
+
+      - run: docker push garyascuy/money:latest
 
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
