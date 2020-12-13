@@ -30,7 +30,3 @@ jobs:
           tags: garyascuy/money:latest
 
       - run: docker push garyascuy/money:latest
-
-      - name: Image Digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
-          
