@@ -8,7 +8,8 @@
     "start:production": "node src/index.js",
     "lint": "eslint ./src ./tests --config .eslintrc.json",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "build": "docker build -t money:$(node -e \"console.log(require('./package.json').version)\") ."
   },
   "repository": {
     "type": "git",
