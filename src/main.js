@@ -2,19 +2,15 @@ const Hapi = require('@hapi/hapi')
 
 const { get } = require('./settings')
 const { logger } = require('./logger')
-const { connect, disconnect } = require('./app/models/database')
+const { connect, disconnect } = require('./app/dataAccessLayer/database')
+const { register } = require('./app/controllers')
 
 async function main() {
   await connect()
 
   const { host, port } = get('server')
   const server = Hapi.server({ port, host })
-
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: (request, h) => 'Hello World!',
-  })
+  await register(server, '/api/v1')
 
   await server.start()
   logger.info(`Server running on ${server.info.uri}`)
@@ -22,7 +18,7 @@ async function main() {
 
 function exit(error) {
   disconnect()
-  logger.error(error)
+  if (error) logger.error(error)
   process.exit(1)
 }
 
