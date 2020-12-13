@@ -1,4 +1,3 @@
-const { required } = require('nconf')
 const winston = require('winston')
 
 const { get } = require('../settings')

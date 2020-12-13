@@ -13,7 +13,7 @@ async function main() {
   server.route({
     method: 'GET',
     path: '/',
-    handler: (request, h) => 'Hello World!'
+    handler: (request, h) => 'Hello World!',
   })
 
   await server.start()

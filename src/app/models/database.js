@@ -12,13 +12,13 @@ async function connect() {
     logger.info(`database connected to ${url.protocol}//${url.host}${url.pathname}`)
     return db
   } catch (error) {
-    logger.error(`Error trying to connect to database`, error)
+    logger.error('Error trying to connect to database', error)
   }
 }
 
 async function disconnect() {
-  mongoose.connection.close(error => {
-    logger.error(`Mongoose default connection is disconnected`, error)
+  mongoose.connection.close((error) => {
+    logger.error('Mongoose default connection is disconnected', error)
   })
 }
 
