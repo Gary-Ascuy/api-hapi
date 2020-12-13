@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "d9679e37-a665-a971-b57b-ce12ad9fd27c",
+		"name": "MoneyAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3666",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3666"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3666/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3666",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3666/api/v1/transactions/5fd62b3895b625532ba8a735",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3666",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"5fd62b3895b625532ba8a735"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"in\",\n    \"description\": \"EPM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3666/api/v1/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3666",
+					"path": [
+						"api",
+						"v1",
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"out\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3666/api/v1/transactions/5fd62b3895b625532ba8a735",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3666",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"5fd62b3895b625532ba8a735"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3666/api/v1/transactions/5fd62a7916b4a5527e6917f7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3666",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						"5fd62a7916b4a5527e6917f7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

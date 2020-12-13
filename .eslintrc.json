@@ -20,6 +20,8 @@
             "never"
         ],
         "no-unused-vars": "off",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "no-underscore-dangle": "off",
+        "object-curly-newline": "off"
     }
 }
