@@ -16,8 +16,8 @@ async function main() {
   logger.info(`Server running on ${server.info.uri}`)
 }
 
-function exit(error) {
-  disconnect()
+async function exit(error) {
+  await disconnect()
   if (error) logger.error(error)
   process.exit(1)
 }

@@ -115,5 +115,9 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
+# Remove MacOs files 
+.DS_Store
+*.DS_Store
+
 # Development Tools Folder
 tools/data/

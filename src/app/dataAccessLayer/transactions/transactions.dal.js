@@ -1,7 +1,7 @@
-const TransactionModel = require('./transactions.model')
+const { TransactionModel } = require('./transactions.model')
 
 async function getAll(user) {
-  return await TransactionModel.find({ userId: user.sub})
+  return TransactionModel.find({ userId: user.sub })
 }
 
 async function getBy(_id, user) {
@@ -12,7 +12,7 @@ async function getBy(_id, user) {
 }
 
 async function create(data, user) {
-  const transaction = TransactionModel.create({ userId: user.sub, ...data })
+  const transaction = await TransactionModel.create({ userId: user.sub, ...data })
   return getBy(transaction._id, user)
 }
 
