@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-alpine
 LABEL MAINTAINER="Gary Ascuy <gary.ascuy@gmail.com>"
 
 ENV NODE_ENV=production
