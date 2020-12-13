@@ -9,7 +9,7 @@ const format = winston.format.combine(
 )
 
 const logger = winston.createLogger({
-  level: get('logger.level'),
+  level: get('logger:level'),
   transports: [new winston.transports.Console({ format })],
 })
 
