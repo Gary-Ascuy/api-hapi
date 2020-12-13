@@ -4,6 +4,7 @@
   "description": "Hapi Test Api",
   "main": "index.js",
   "scripts": {
+    "db": "docker-compose -f tools/docker-compose.yml up",
     "start": "nodemon src/index.js",
     "start:production": "node src/index.js",
     "lint": "eslint ./src ./tests --config .eslintrc.json",
