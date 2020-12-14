@@ -5,27 +5,27 @@ const user = { sub: 'eb66de8e-1ad8-41d4-b039-6f11013e7adc' }
 
 async function getAll(request, reply) {
   logger.info('GET /transactions - list all elements')
-  return transactionService.getAll(user)
+  return reply.data(await transactionService.getAll(user))
 }
 
 async function getBy(request, reply) {
   logger.info('GET /transactions/_id - get an element')
-  return transactionService.getBy(request.params._id, user)
+  return reply.data(await transactionService.getBy(request.params._id, user))
 }
 
 async function create(request, reply) {
   logger.info('POST /transactions - create an element')
-  return transactionService.create(request.payload, user)
+  return reply.data(await transactionService.create(request.payload, user))
 }
 
 async function update(request, reply) {
   logger.info('PUT /transactions/_id - update an element')
-  return transactionService.update(request.params._id, request.payload, user)
+  return reply.data(await transactionService.update(request.params._id, request.payload, user))
 }
 
 async function remove(request, reply) {
   logger.info('DELETE /transactions/_id - delete an element')
-  return transactionService.remove(request.params._id, user)
+  return reply.data(await transactionService.remove(request.params._id, user))
 }
 
 async function register(server, prefix) {

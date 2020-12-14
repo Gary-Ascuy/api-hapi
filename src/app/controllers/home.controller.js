@@ -1,5 +1,5 @@
-async function home() {
-  return { name: 'Money API', version: 'v1' }
+async function home(request, reply) {
+  return reply.data({ name: 'Money API', version: 'v1' })
 }
 
 async function register(server, prefix) {

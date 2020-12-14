@@ -5,11 +5,20 @@ const { logger } = require('./logger')
 const { connect, disconnect } = require('./app/dataAccessLayer/database')
 const { register } = require('./app/controllers')
 
+function data(data, error) {
+  if (error) {
+    return { success: false, error }
+  }
+
+  return { success: true, data }
+}
+
 async function main() {
   await connect()
 
   const { host, port } = get('server')
   const server = Hapi.server({ port, host })
+  server.decorate('toolkit', 'data', data);
   await register(server, '/api/v1')
 
   await server.start()
