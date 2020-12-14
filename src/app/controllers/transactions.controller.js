@@ -39,8 +39,8 @@ async function register(server, prefix) {
       payload: Joi.object({
         type: Joi.string().min(2).max(3),
         description: Joi.string().min(3).max(50),
-      }).required()
-    }
+      }).required(),
+    },
   }
 
   server.route({ method: 'GET', path, handler: getAll })

@@ -5,7 +5,7 @@ const { logger } = require('./logger')
 const { connect, disconnect } = require('./app/dataAccessLayer/database')
 const { register } = require('./app/controllers')
 
-function data(data, error) {
+function buildDataMethod(data, error) {
   if (error) {
     return { success: false, error }
   }
@@ -18,7 +18,7 @@ async function main() {
 
   const { host, port } = get('server')
   const server = Hapi.server({ port, host })
-  server.decorate('toolkit', 'data', data);
+  server.decorate('toolkit', 'data', buildDataMethod)
   await register(server, '/api/v1')
 
   await server.start()
