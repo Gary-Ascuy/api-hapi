@@ -1,3 +1,5 @@
+const Joi = require('joi')
+
 const transactionService = require('../services/transactions')
 const { logger } = require('../../logger')
 
@@ -32,9 +34,18 @@ async function register(server, prefix) {
   const path = `${prefix}/transactions`
   const pathById = `${path}/{_id}`
 
+  const options = {
+    validate: {
+      payload: Joi.object({
+        type: Joi.string().min(2).max(3),
+        description: Joi.string().min(3).max(50),
+      }).required()
+    }
+  }
+
   server.route({ method: 'GET', path, handler: getAll })
   server.route({ method: 'GET', path: pathById, handler: getBy })
-  server.route({ method: 'POST', path, handler: create })
+  server.route({ method: 'POST', path, handler: create, options })
   server.route({ method: 'PUT', path: pathById, handler: update })
   server.route({ method: 'DELETE', path: pathById, handler: remove })
 }
